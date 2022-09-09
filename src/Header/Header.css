@@ -1,3 +1,31 @@
 .login, .logout {
     margin-right: 10px;
 }
+
+.brand {
+    height: 45px;
+}
+
+@media screen and (max-width: 990px) {
+    .navbar-nav, .nav-link {
+        display: inline;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .navbar-nav, .nav-link {
+        display: inline;
+        margin: 10px;
+        font-size: 12px;
+    }
+
+    .login, .logout {
+        font-size: 12px;
+    }
+
+    .brand {
+        height: 30px;
+        margin-top: -10px;
+    }
+}

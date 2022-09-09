@@ -1,0 +1,12 @@
+.home-div {
+    display: flex;
+    flex-direction: column;
+    background-color: #848484;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.video {
+    justify-content: center;
+    align-items: center;
+}

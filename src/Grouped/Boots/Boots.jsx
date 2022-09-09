@@ -13,7 +13,7 @@ function Boots() {
             <Snowfall snowflakeCount={500} style={{position: 'fixed', height: '100vh'}}/>
             {BootsData.map(({ key, name, image, desc, price }) => (
                 <div class="col-sm-3" style={{ paddingBottom: '10px'}}>
-                    <div class="card text-white bg-dark h-100" style={{ margin: '10px'}}>
+                    <div class="card text-white bg-dark h-100">
                             <div class="card-body" style={{ textAlign: 'center'}}>
                                 <img src={image} className='card-img-top'/>
                                 <h5 class="card-title">{name}</h5>

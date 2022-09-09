@@ -2,3 +2,35 @@
     height: 100%;
     overflow: hidden;
 }
+
+.card {
+    margin: 10px;
+}
+
+@media screen and (max-width: 870px) {
+    .card-body, .card-price {
+        font-size: 12px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card {
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 575.5px) {
+    .card-body, .card-price {
+        font-size: 16px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card {
+        margin: 5px;
+    }
+}

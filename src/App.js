@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Shop from './Shop/Shop'
+import Header from './Header/Header'
+import Snowboards from './Grouped/Snowboards/Snowboards' 
+import Pants from './Grouped/Pants/Pants' 
+import Jackets from './Grouped/Jackets/Jackets' 
+import Goggles from './Grouped/Goggles/Goggles' 
+import Gloves from './Grouped/Gloves/Gloves' 
+import Boots from './Grouped/Boots/Boots';
+import Bindings from './Grouped/Bindings/Bindings';
+import Beanie from './Grouped/Beanie/Beanie';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<><Header /> </>} />
+        <Route path='/shop' element={<><Header /> <Shop /></>} />
+        <Route path='/shop/snowboards' element={<><Header /> <Snowboards /></>} />
+        <Route path='/shop/pants' element={<><Header /> <Pants /></>} />
+        <Route path='/shop/jackets' element={<><Header /> <Jackets /></>} />
+        <Route path='/shop/goggles' element={<><Header /> <Goggles /></>} />
+        <Route path='/shop/gloves' element={<><Header /> <Gloves /></>} />
+        <Route path='/shop/boots' element={<><Header /> <Boots /></>} />
+        <Route path='/shop/bindings' element={<><Header /> <Bindings /></>} />
+        <Route path='/shop/beanies' element={<><Header /> <Beanie /></>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

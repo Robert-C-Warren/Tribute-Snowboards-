@@ -1,10 +1,10 @@
 import React from 'react'
-import GogglesData from './GogglesData'
+import SnowboardsData from './SnowboardsData'
 import Snowfall from 'react-snowfall'
-import '../../Grouped/Grouped.css'
+import '../Grouped.css'
 
 
-function Goggles() {
+function Snowboards() {
 
 
   return (
@@ -12,7 +12,7 @@ function Goggles() {
         <div class="row">
             <Snowfall snowflakeCount={500} style={{position: 'fixed', height: '100vh'}}/>
             {/* Map array elements to card  */}
-            {GogglesData.map(({ key, name, image, desc, price }) => (
+            {SnowboardsData.map(({ key, name, image, desc, price }) => (
                 <div class="col-sm-3" style={{ paddingBottom: '10px'}}>
                     <div class="card text-white bg-dark h-100">
                             <div class="card-body" style={{ textAlign: 'center'}}>
@@ -20,7 +20,7 @@ function Goggles() {
                                 <h5 class="card-title">{name}</h5>
                                 <p className='card-dec'>{desc}</p>
                                 <h6 className='card-price' style={{ paddingBottom: '10px'}}>${price}</h6>
-                                <a href={`/shop/goggles/${key}`} class="btn btn-light bi bi-arrow-right" />
+                                <a href={`/shop/snowboards/${key}`} class="btn btn-light bi bi-arrow-right" />
                             </div>
                     </div>
                 </div>
@@ -30,4 +30,4 @@ function Goggles() {
   )
 }
 
-export default Goggles
+export default Snowboards

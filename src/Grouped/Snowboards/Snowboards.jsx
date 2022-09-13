@@ -3,14 +3,13 @@ import SnowboardsData from './SnowboardsData'
 import Snowfall from 'react-snowfall'
 import '../Grouped.css'
 
-
 function Snowboards() {
-
 
   return (
     <div className='main'>
         <div class="row">
             <Snowfall snowflakeCount={500} style={{position: 'fixed', height: '100vh'}}/>
+            {/* Map array elements to card  */}
             {SnowboardsData.map(({ key, name, image, desc, price }) => (
                 <div class="col-sm-3" style={{ paddingBottom: '10px'}}>
                     <div class="card text-white bg-dark h-100">
@@ -19,7 +18,7 @@ function Snowboards() {
                                 <h5 class="card-title">{name}</h5>
                                 <p className='card-dec'>{desc}</p>
                                 <h6 className='card-price' style={{ paddingBottom: '10px'}}>${price}</h6>
-                                <a href={`/shop/snowboards/${key}`} class="btn btn-light bi bi-arrow-right" />
+                                <a href={`/shop/snowboards/${key}`} class="btn btn-light bi bi-arrow-right"/>
                             </div>
                     </div>
                 </div>

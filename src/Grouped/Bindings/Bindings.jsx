@@ -11,6 +11,7 @@ function Bindings() {
     <div className='main'>
         <div class="row">
             <Snowfall snowflakeCount={500} style={{position: 'fixed', height: '100vh'}}/>
+            {/* Map array elements to card  */}
             {BindingsData.map(({ key, name, image, desc, price }) => (
                 <div class="col-sm-3" style={{ paddingBottom: '10px'}}>
                     <div class="card text-white bg-dark h-100">

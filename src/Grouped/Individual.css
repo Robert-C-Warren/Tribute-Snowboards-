@@ -1,0 +1,50 @@
+body {
+    background-color: #848484;
+}
+
+.container {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+.title {
+    padding-left: 40px;
+}
+
+.pqr {
+    padding-right: 70px;
+}
+
+.para {
+    float: right;
+    margin-right: 0;
+    padding-left: 80%;
+    top: 0;
+}
+
+li {
+    list-style: none;
+    line-height: 50px;
+    color: #000;
+}
+
+.col-md-2 {
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.col-md-2 a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Add To Cart */
+.col-md-2.mio {
+    font-size: 12px;
+    padding-top: 7px;
+}
+
+.r4 {
+    padding-left: 25px;
+}

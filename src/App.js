@@ -11,12 +11,16 @@ import Boots from './Grouped/Boots/Boots';
 import Bindings from './Grouped/Bindings/Bindings';
 import Beanie from './Grouped/Beanie/Beanie';
 import Home from './Home/Home'
+import Login from './LoginLogout/Login'
+import Create from './LoginLogout/Create'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<><Home /> </>} />
+        <Route path='/login' element={<><Header /> <Login /></>} />
+        <Route path='/createaccount' element={<><Header /> <Create /></>} />
         <Route path='/shop' element={<><Header /> <Shop /></>} />
         <Route path='/shop/snowboards' element={<><Header /> <Snowboards /></>} />
         <Route path='/shop/pants' element={<><Header /> <Pants /></>} />

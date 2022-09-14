@@ -24,6 +24,14 @@ body {
     margin: 15px;
 }
 
+.btn-light-create {
+    font-size: 20px;
+    background: #ffffff;
+    justify-content: center;
+    margin-left: 80px;
+    margin-top: 12px;
+}
+
 .email, .password, .first-name, .last-name, .confirm-password {
     padding: 13px;
     width: 300px;

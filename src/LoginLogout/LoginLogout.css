@@ -32,7 +32,7 @@ body {
     margin-top: 12px;
 }
 
-.email, .password, .first-name, .last-name, .confirm-password {
+.email, .password, .user-name, .confirm-password {
     padding: 13px;
     width: 300px;
     background-color: rgba(255, 255, 255, 0.5);

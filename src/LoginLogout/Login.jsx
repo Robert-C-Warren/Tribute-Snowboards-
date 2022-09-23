@@ -9,7 +9,7 @@ function Login() {
         <div className="card" style={{ width:"25rem" }} >
             <div className="card-body">
                 <h1 className="card-title elem">Login</h1>
-                <input className='email elem' type='email' placeholder='Email' />
+                <input className='user-name elem' type='name' placeholder='Username' /> 
                 <input className='password elem' type='password' placeholder='Password' />
                 <a href="#" className="btn btn-light elem">Login</a>
                 <h6 className='make-account elem'>Don't have an account? 

@@ -3,14 +3,24 @@ import './LoginLogout.css'
 import Snowfall from 'react-snowfall'
 import axios from 'axios'
 import { useState } from 'react'
-import 'react-notifications/lib/notifications.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-function Login() {
+function CreateAccount() {
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('')
+  const [visible, setVisible] = useState(false)
+  const [success, setSuccess] = useState()
+  const [successVisible, setSuccessVisible] = useState(false)
 
+  const allFieldsRequired = () => toast("All Fields Required");
+  const validEmailRequired = () => toast("Please Enter Valid Email");
+  const validPasswordRequired = () => toast("Password must be at least 8 characters");
+  const accountCreated = () => toast("Account Created Successfully");
+  
   let handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,8 +30,44 @@ function Login() {
       password: password
     }
 
-    axios.post('http://localhost:8080/createaccount', loginCredential)
-    
+    if (username === undefined || email === undefined || password === undefined) {
+      console.log("TRUE")
+      setError(allFieldsRequired)
+      setVisible(true)
+      setTimeout(function () {
+        setVisible(false);
+      }, 5000)
+    }
+    else if (email !== null && !email.includes("@")) {
+      console.log("TRUE")
+      setError(validEmailRequired)
+      setVisible(true)
+      setTimeout(function () {
+        setVisible(false);
+      }, 5000)
+    }
+    else if (password.length < 8) {
+      setError(validPasswordRequired)
+      setVisible(true)
+      setTimeout(function () {
+        setVisible(false);
+      }, 5000)
+    }
+    else {
+      axios.post('http://localhost:8080/createaccount', loginCredential)
+        .then((response) => {
+          if (!response.ok) {
+            setSuccess(accountCreated)
+            setSuccessVisible(true)
+            setEmail('')
+            setUsername('')
+            setPassword('')
+            setTimeout(function () {
+              setSuccessVisible(false)
+            }, 5000)
+          }
+        })
+    }
   }
 
   return (
@@ -37,10 +83,12 @@ function Login() {
                   <input className='password elem' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Password' />
                   <button className='btn btn-light-create' type='submit'>Create Account</button>
                 </form>
+
+                <ToastContainer />
             </div>
         </div>
     </div>
   )
 }
 
-export default Login
+export default CreateAccount
